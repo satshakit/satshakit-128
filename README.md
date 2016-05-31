@@ -1,2 +1,139 @@
-# satshakit-128
-1284p powered satshakit
+<h1 style="font-family: courier;" align="center"> satshakit 128</h1>
+<p align="center">
+<img src="media/satshakit128.jpg" width="70%">
+<div align="center"><i>An improved & fabbable Arduino IDE/libraries compatible board.</i></div>
+</p>  
+
+What is satshakit?
+--
+
+satshakit is a **Arduino IDE  and libraries compatible**, fabbable and open source board, and also an improved version of [Fabkit](http://fabacademy.org/archives/2015/doc/projects/fabkit-0.4.html). 
+
+satshakit boards
+--
+
+There are different kinds of **satshakit boards** depending on the **fabrication technique** you will use to make them, or on the **size** of the board. 
+
+<img src="media/satshakit_versions.jpg" width="70%">
+
+Here is a comparison table about different satshakit boards:
+
+|name|mcu|pins|size(mm)|
+| :---: | :---:|:---:|:---:|
+|`satshakit laser`|ATmega328P|Arduino + ADC6/7|48 x 42|
+|`satshakit cnc`|ATmega328P| Arduino + ADC6/7  |54 x 45|
+|`satshakit multicore`|2 x ATmega328P| 2 x Arduino + ADC6/7|50 x 42|
+|`satshakit micro`| ATmega328P|Arduino|40 x 24|
+|`satshakit flight controller`| ATmega328P|MultiWii|48 x 48|
+|`satshakit 128`| ATmega1284P|1284P|48 x 36|
+
+Here you can find all of the satshakit boards: **[satshakit organization](https://github.com/satshakit)**.
+
+satshakit 128
+--
+
+**satshakit 128** is satshakit built around the **ATMEga1284P** chip and it is suitable for complex scenarios in which is needed have more flash and ram memory, but also the possibility to use 2 serial simultaneously.
+In comparison with the other satshakits based on ATMega328P satshakit 128 has:
+
+- **128k** flash memory instead of 32k
+- **2 serials** instead of 1
+- **16k of ram** instead of 2k
+- **32 IO** pins instead of 23
+
+Here is the **satshakit 128 board**:
+
+<img src="media/satshakit128_board.jpg" width="70%">
+
+<img src="/media/satshakit128.svg" width="70%">
+
+**downloads (right click, download as)**
+
+- [satshakit 128 svg](https://raw.githubusercontent.com/satshakit/satshakit-micro/master/media/satshakit_micro.svg)
+- [satshakit 128 internal png](https://raw.githubusercontent.com/satshakit/satshakit-micro/master/media/satshakit_micro_internal.png)
+- [satshakit 128 holes png](https://github.com/satshakit/satshakit-micro/blob/master/media/satshakit_micro_holes.png)
+- [satshakit 128 cut png](https://github.com/satshakit/satshakit-micro/blob/master/media/satshakit_micro_cut.png)
+- [satshakit 128 schematic](https://raw.githubusercontent.com/satshakit/satshakit-micro/master/eagle_projects/satshakit_micro/satshakit_micro.sch)
+- [satshakit 128 board](https://raw.githubusercontent.com/satshakit/satshakit-micro/master/eagle_projects/satshakit_micro/satshakit_micro.brd)
+- [satshakit 128 BOM Open Document](https://github.com/satshakit/satshakit-micro/raw/master/docs/satshakit_micro_BOM.ods)
+- [satshakit 128 BOM Excel](https://github.com/satshakit/satshakit-micro/raw/master/docs/satshakit_micro_BOM.xlsx)
+
+**media**
+
+<img src="media/satshakit128_board_solder.jpg" width="70%">
+
+<img src="media/satshakit128_board_soldered.jpg" width="70%">
+
+satshakit 128 uploading bootloader:
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=KuCiwJ3c1IY
+" target="_blank"><img src="http://img.youtube.com/vi/KuCiwJ3c1IY/0.jpg" 
+alt="http://img.youtube.com/vi/KuCiwJ3c1IY/0.jpg" width="240" height="180" border="10" /></a>
+
+satshakit 128 uploading blink:
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=X3d5tKupVwU
+" target="_blank"><img src="http://img.youtube.com/vi/X3d5tKupVwU/0.jpg" 
+alt="http://img.youtube.com/vi/X3d5tKupVwU/0.jpg" width="240" height="180" border="10" /></a>
+
+Getting Started
+--
+A satshakit board is **totally like an Arduino board**, thus is possible to use the Arduino IDE. When you finish solder satshakit, you're ready to program it. If you want to use satshakit as an Arduino, you first need to **upload Arduino bootloader**. This will also set the ATmega1284P fuses as the same of an Arduino UNO. 
+
+To use this board you have to place the folder 
+
+To do this you need to use a **programmer**, for example another Arduino or FabISP. If you plan to program a satshakit with an Arduino, be sure to upload the **Arduino as ISP skecth** before connecting the satshakit to it.
+
+Here are the connection schemas for programming **satshakit micro**:
+
+<img src="media/satshakit_micro_arduino_programming.png" width="60%">
+
+<img src="media/satshakit_micro_fabisp_programming.png" width="60%">
+
+Once everything is connected, follow these steps to upload Arduino bootloader:
+
+1. open Arduino IDE 
+2. select proper programmer (for example Arduino as ISP or USBtinyISP) 
+3. select Arduino UNO as board
+4. click on tools->Burn Bootloader
+
+To program a satshakit micro, you have always to use a programmer, and use the **Sketch >Upload using a programmer** function of the Arduino IDE.
+
+And here is the Arduino pinout of the satshakit micro:
+
+<img src="media/satshakit_micro_arduino_pin_mapping.png" width="60%">
+
+What's in the repo
+--
+- **[docs](https://github.com/satshakit/satshakit-micro/tree/master/docs)**: BOM files for Farnell
+- **[egle projects](https://github.com/satshakit/satshakit-micro/tree/master/eagle_projects/satshakit_micro)**: eagle projects of satshakit
+- **[media](https://github.com/satshakit/satshakit-micro/tree/master/media)**: svg of satshakits, connections schemas, images for cnc milling machine and fiber laser cutter, other images
+
+Authors
+--
+
+- Daniele Ingrassia
+
+Contact
+--
+- **ingrassiada@gmail.com**
+- **[linkedin](http://it.linkedin.com/in/danieleingrassia)**
+
+
+Thanks
+--
+
+[Fablab Kamp-Lintfort](http://fablab.hochschule-rhein-waal.de/index.php/de/)<br />
+Hochschule Rhein-Waal<br />
+Friedrich-Heinrich-Allee 25, 47475 Kamp-Lintfort, Germany<br />
+fablab@hochschule-rhein-waal.de
+
+
+License
+--
+This work is licensed under the terms of Attribution-NonCommercial-ShareAlike 4.0 International ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)).
+
+Disclaimer  
+--
+
+<div class="align-justify">
+This hardware/software is provided "as is", and you use the hardware/software at your own risk. Under no circumstances shall any author be liable for direct, indirect, special, incidental, or consequential damages resulting from the use, misuse, or inability to use this hardware/software, even if the authors have been advised of the possibility of such damages.</div>

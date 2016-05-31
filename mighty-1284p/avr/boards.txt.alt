@@ -1,0 +1,382 @@
+
+# This an alternative boards.txt for mighty-1284p that offers more board/clock settings combinations 
+# for more advanced users. Instead of either one or two preselected clock setting options available
+# from the menu for each board, with this boards.txt there are now all clock settings available for 
+# all boards listed, as the board and the clock setting are selected independently from separate sub-menus.
+# Note that 16Mhz Low Power and 20Mhz Full Swing clock settings have not been tested with all ATmega1284P 
+# based boards and may cause unstable operation.
+#
+# We have also added a menu option for enabling the 1284p JTAG functionality, or leaving these pins as general 
+# purpose io pins.
+#
+# For the "Sleeping Beauty" board, a menu option for the alt functions of the A4/A5 pins is included. 
+#
+# Note that the board has to have the matching bootloader burned to the board with an ISP programmer before 
+# that board/clock setting combination will work at build/upload time. E.g., if changing from 16MHz full swing 
+# clock to an 8MHz internal clock, the appropriate board and clock settings will have to be selected before 
+# the "burn bootloader" operation is performed again. This is also true for JTAG functionality. The A4/A5
+# functions for the "Sleeping Beauty" board does not require a "burn bootloader" operation to change, however.
+#
+# To install and use this alternative boards.txt file, simply rename the default boards.txt to boards.txt.std,
+# and then rename this file to boards.txt. Restart the IDE, and you will see the additional "clock" sub-menus 
+# appear under the board menu when one of the mighty-1284p board types is selected.
+#
+# -June, 2015.
+
+##############################################################
+
+avr_developers.name=avr-developers.com pinout
+
+avr_developers.upload.tool=arduino:avrdude
+avr_developers.upload.protocol=arduino
+avr_developers.upload.maximum_data_size=16384
+avr_developers.upload.maximum_size=130048
+
+avr_developers.bootloader.tool=arduino:avrdude
+avr_developers.bootloader.extended_fuses=0xfd
+avr_developers.bootloader.unlock_bits=0x3F
+avr_developers.bootloader.lock_bits=0x0F
+
+avr_developers.build.mcu=atmega1284p
+avr_developers.build.core=arduino:arduino
+avr_developers.build.variant=avr_developers
+avr_developers.build.board=1284P_AVR_DEVELOPERS
+
+# menu selections
+
+menu.jtag=JTAG
+
+avr_developers.menu.jtag.disabled=JTAG disabled
+avr_developers.menu.jtag.disabled.bootloader.high_fuses=0xde
+
+avr_developers.menu.jtag.enabled=JTAG enabled
+avr_developers.menu.jtag.enabled.bootloader.high_fuses=0x9e
+
+menu.clock=Clock
+
+# 16Mhz Full Swing - more resistant to electrical interference than Low Power
+# OK because optiboot_mighty1284p_1M.hex does no pin toggle for LED flash
+avr_developers.menu.clock.full_swing=16Mhz Full Swing
+avr_developers.menu.clock.full_swing.upload.speed=115200
+avr_developers.menu.clock.full_swing.bootloader.low_fuses=0xf7
+avr_developers.menu.clock.full_swing.bootloader.file=optiboot/optiboot_atmega1284p.hex
+avr_developers.menu.clock.full_swing.build.f_cpu=16000000L
+
+## 16Mhz Full Swing @ 1Mbps
+# commented out because optiboot_mighty1284p_1M.hex toggles B7 for LED flash
+#avr_developers.menu.clock.1M=16Mhz F.S. @ 1Mbps
+#avr_developers.menu.clock.1M.upload.speed=1000000
+#avr_developers.menu.clock.1M.bootloader.low_fuses=0xf7
+#avr_developers.menu.clock.1M.bootloader.file=optiboot/optiboot_mighty1284p_1M.hex
+#avr_developers.menu.clock.1M.build.f_cpu=16000000L
+
+# 16Mhz Low Power
+# OK because optiboot_mighty1284p_1M.hex does no pin toggle for LED flash
+avr_developers.menu.clock.low_power=16Mhz Low Power
+avr_developers.menu.clock.low_power.upload.speed=115200
+avr_developers.menu.clock.low_power.bootloader.low_fuses=0xff
+avr_developers.menu.clock.low_power.bootloader.file=optiboot/optiboot_atmega1284p.hex
+avr_developers.menu.clock.low_power.build.f_cpu=16000000L
+
+## 8Mhz Internal Oscillator
+# commented out because optiboot_mighty1284p_1M.hex toggles B7 for LED flash
+#avr_developers.menu.clock.8Mhz=8Mhz Internal
+#avr_developers.menu.clock.8Mhz.upload.speed=500000
+#avr_developers.menu.clock.8Mhz.bootloader.low_fuses=0xe2
+#avr_developers.menu.clock.8Mhz.bootloader.file=optiboot/optiboot_1284p_8MHz_500k.hex
+#avr_developers.menu.clock.8Mhz.build.f_cpu=8000000L
+
+# 20Mhz Full Swing
+# OK because optiboot_mighty1284p_1M.hex does no pin toggle for LED flash
+avr_developers.menu.clock.20Mhz=20Mhz Full Swing
+avr_developers.menu.clock.20Mhz.upload.speed=115200
+avr_developers.menu.clock.20Mhz.bootloader.low_fuses=0xf7
+avr_developers.menu.clock.20Mhz.bootloader.file=optiboot/optiboot_1284p_20MHz_noled.hex
+avr_developers.menu.clock.20Mhz.build.f_cpu=20000000L
+
+##############################################################
+
+bobuino.name=Bobuino or Skinny Bob
+# Bobuino: http://crossroadsfencing.com/BobuinoRev17/index.html
+# Skinny Bob: http:embeddedcoolness.com/shop/rfx-1284p-devdep-board-w-prototyping-area-nrf24l01-headers-kit/
+
+bobuino.upload.tool=arduino:avrdude
+bobuino.upload.protocol=arduino
+bobuino.upload.maximum_data_size=16384
+bobuino.upload.maximum_size=130048
+
+bobuino.bootloader.tool=arduino:avrdude
+bobuino.bootloader.extended_fuses=0xfd
+bobuino.bootloader.unlock_bits=0x3F
+bobuino.bootloader.lock_bits=0x0F
+
+bobuino.build.mcu=atmega1284p
+bobuino.build.core=arduino:arduino
+bobuino.build.variant=bobuino
+bobuino.build.board=1284P_BOBUINO
+
+# menu selections
+
+menu.jtag=JTAG
+
+bobuino.menu.jtag.disabled=JTAG disabled
+bobuino.menu.jtag.disabled.bootloader.high_fuses=0xde
+
+bobuino.menu.jtag.enabled=JTAG enabled
+bobuino.menu.jtag.enabled.bootloader.high_fuses=0x9e
+
+menu.clock=Clock
+
+# 16Mhz Full Swing - more resistant to electrical interference than Low Power
+bobuino.menu.clock.full_swing=16Mhz Full Swing
+bobuino.menu.clock.full_swing.upload.speed=115200
+bobuino.menu.clock.full_swing.bootloader.low_fuses=0xf7
+bobuino.menu.clock.full_swing.bootloader.file=optiboot/optiboot_atmega1284p.hex
+bobuino.menu.clock.full_swing.build.f_cpu=16000000L
+
+# 16Mhz Full Swing @ 1Mbps
+bobuino.menu.clock.1M=16Mhz F.S. @ 1Mbps
+bobuino.menu.clock.1M.upload.speed=1000000
+bobuino.menu.clock.1M.bootloader.low_fuses=0xf7
+bobuino.menu.clock.1M.bootloader.file=optiboot/optiboot_mighty1284p_1M.hex
+bobuino.menu.clock.1M.build.f_cpu=16000000L
+
+# 16Mhz Low Power
+bobuino.menu.clock.low_power=16Mhz Low Power
+bobuino.menu.clock.low_power.upload.speed=115200
+bobuino.menu.clock.low_power.bootloader.low_fuses=0xff
+bobuino.menu.clock.low_power.bootloader.file=optiboot/optiboot_atmega1284p.hex
+bobuino.menu.clock.low_power.build.f_cpu=16000000L
+
+# 8Mhz Internal Oscillator
+bobuino.menu.clock.8Mhz=8Mhz Internal
+bobuino.menu.clock.8Mhz.upload.speed=500000
+bobuino.menu.clock.8Mhz.bootloader.low_fuses=0xe2
+bobuino.menu.clock.8Mhz.bootloader.file=optiboot/optiboot_1284p_8MHz_500k.hex
+bobuino.menu.clock.8Mhz.build.f_cpu=8000000L
+
+# 20Mhz Full Swing
+bobuino.menu.clock.20Mhz=20Mhz Full Swing
+bobuino.menu.clock.20Mhz.upload.speed=115200
+bobuino.menu.clock.20Mhz.bootloader.low_fuses=0xf7
+bobuino.menu.clock.20Mhz.bootloader.file=optiboot/optiboot_1284p_20MHz_noled.hex
+bobuino.menu.clock.20Mhz.build.f_cpu=20000000L
+
+##############################################################
+
+mighty.name="maniacbug" Mighty 1284P
+# https://maniacbug.wordpress.com/2011/11/27/arduino-on-atmega1284p-4/
+
+mighty.upload.tool=arduino:avrdude
+mighty.upload.protocol=arduino
+mighty.upload.maximum_data_size=16384
+mighty.upload.maximum_size=130048
+
+mighty.bootloader.tool=arduino:avrdude
+mighty.bootloader.extended_fuses=0xfd
+mighty.bootloader.unlock_bits=0x3F
+mighty.bootloader.lock_bits=0x0F
+
+mighty.build.mcu=atmega1284p
+mighty.build.core=arduino:arduino
+mighty.build.variant=standard
+mighty.build.board=1284P_STANDARD
+
+# menu selections
+
+menu.jtag=JTAG
+
+mighty.menu.jtag.disabled=JTAG disabled
+mighty.menu.jtag.disabled.bootloader.high_fuses=0xde
+
+mighty.menu.jtag.enabled=JTAG enabled
+mighty.menu.jtag.enabled.bootloader.high_fuses=0x9e
+
+menu.clock=Clock
+
+# 16Mhz Full Swing - more resistant to electrical interference than Low Power
+# OK because optiboot_mighty1284p_1M.hex does no pin toggle for LED flash
+mighty.menu.clock.full_swing=16Mhz Full Swing
+mighty.menu.clock.full_swing.upload.speed=115200
+mighty.menu.clock.full_swing.bootloader.low_fuses=0xf7
+mighty.menu.clock.full_swing.bootloader.file=optiboot/optiboot_atmega1284p.hex
+mighty.menu.clock.full_swing.build.f_cpu=16000000L
+
+## 16Mhz Full Swing @ 1Mbps
+# commented out because optiboot_mighty1284p_1M.hex toggles B7 for LED flash
+#mighty.menu.clock.1M=16Mhz F.S. @ 1Mbps
+#mighty.menu.clock.1M.upload.speed=1000000
+#mighty.menu.clock.1M.bootloader.low_fuses=0xf7
+#mighty.menu.clock.1M.bootloader.file=optiboot/optiboot_mighty1284p_1M.hex
+#mighty.menu.clock.1M.build.f_cpu=16000000L
+
+# 16Mhz Low Power
+# OK because optiboot_mighty1284p_1M.hex does no pin toggle for LED flash
+mighty.menu.clock.low_power=16Mhz Low Power
+mighty.menu.clock.low_power.upload.speed=115200
+mighty.menu.clock.low_power.bootloader.low_fuses=0xff
+mighty.menu.clock.low_power.bootloader.file=optiboot/optiboot_atmega1284p.hex
+mighty.menu.clock.low_power.build.f_cpu=16000000L
+
+## 8Mhz Internal Oscillator
+# commented out because optiboot_mighty1284p_1M.hex toggles B7 for LED flash
+#mighty.menu.clock.8Mhz=8Mhz Internal
+#mighty.menu.clock.8Mhz.upload.speed=500000
+#mighty.menu.clock.8Mhz.bootloader.low_fuses=0xe2
+#mighty.menu.clock.8Mhz.bootloader.file=optiboot/optiboot_1284p_8MHz_500k.hex
+#mighty.menu.clock.8Mhz.build.f_cpu=8000000L
+
+# 20Mhz Full Swing
+# OK because optiboot_mighty1284p_1M.hex does no pin toggle for LED flash
+mighty.menu.clock.20Mhz=20Mhz Full Swing
+mighty.menu.clock.20Mhz.upload.speed=115200
+mighty.menu.clock.20Mhz.bootloader.low_fuses=0xf7
+mighty.menu.clock.20Mhz.bootloader.file=optiboot/optiboot_1284p_20MHz_noled.hex
+mighty.menu.clock.20Mhz.build.f_cpu=20000000L
+
+##############################################################
+
+mm.name=Mighty Mini 1284P
+# http://github.com/JChristensen/mini1284
+
+mm.upload.tool=arduino:avrdude
+mm.upload.protocol=arduino
+mm.upload.maximum_data_size=16384
+mm.upload.maximum_size=130048
+
+mm.bootloader.tool=arduino:avrdude
+mm.bootloader.extended_fuses=0xfd
+mm.bootloader.unlock_bits=0x3F
+mm.bootloader.lock_bits=0x0F
+
+mm.build.mcu=atmega1284p
+mm.build.core=arduino:arduino
+mm.build.variant=standard
+mm.build.board=1284P_STANDARD
+
+# menu selections
+
+menu.jtag=JTAG
+
+mm.menu.jtag.disabled=JTAG disabled
+mm.menu.jtag.disabled.bootloader.high_fuses=0xde
+
+mm.menu.jtag.enabled=JTAG enabled
+mm.menu.jtag.enabled.bootloader.high_fuses=0x9e
+
+menu.clock=Clock
+
+# 16Mhz Full Swing - more resistant to electrical interference than Low Power
+mm.menu.clock.full_swing=16Mhz Full Swing
+mm.menu.clock.full_swing.upload.speed=115200
+mm.menu.clock.full_swing.bootloader.low_fuses=0xf7
+mm.menu.clock.full_swing.bootloader.file=optiboot/optiboot_atmega1284p.hex
+mm.menu.clock.full_swing.build.f_cpu=16000000L
+
+# 16Mhz Full Swing @ 1Mbps
+# OK because Mighty Mini uses B7 for LED pin (unlike "maniacbug Mighty")
+mm.menu.clock.1M=16Mhz F.S. @ 1Mbps
+mm.menu.clock.1M.upload.speed=1000000
+mm.menu.clock.1M.bootloader.low_fuses=0xf7
+mm.menu.clock.1M.bootloader.file=optiboot/optiboot_mighty1284p_1M.hex
+mm.menu.clock.1M.build.f_cpu=16000000L
+
+# 16Mhz Low Power
+mm.menu.clock.low_power=16Mhz Low Power
+mm.menu.clock.low_power.upload.speed=115200
+mm.menu.clock.low_power.bootloader.low_fuses=0xff
+mm.menu.clock.low_power.bootloader.file=optiboot/optiboot_atmega1284p.hex
+mm.menu.clock.low_power.build.f_cpu=16000000L
+
+# 8Mhz Internal Oscillator
+# OK because Mighty Mini uses B7 for LED pin (unlike "maniacbug Mighty")
+mm.menu.clock.8Mhz=8Mhz Internal
+mm.menu.clock.8Mhz.upload.speed=500000
+mm.menu.clock.8Mhz.bootloader.low_fuses=0xe2
+mm.menu.clock.8Mhz.bootloader.file=optiboot/optiboot_1284p_8MHz_500k.hex
+mm.menu.clock.8Mhz.build.f_cpu=8000000L
+
+# 20Mhz Full Swing
+mm.menu.clock.20Mhz=20Mhz Full Swing
+mm.menu.clock.20Mhz.upload.speed=115200
+mm.menu.clock.20Mhz.bootloader.low_fuses=0xf7
+mm.menu.clock.20Mhz.bootloader.file=optiboot/optiboot_1284p_20MHz_noled.hex
+mm.menu.clock.20Mhz.build.f_cpu=20000000L
+
+##############################################################
+
+sleepingbeauty.name=Sleeping Beauty
+# http://www.firebirduino.com/sleeping_beauty/
+
+sleepingbeauty.upload.tool=arduino:avrdude
+sleepingbeauty.upload.protocol=arduino
+sleepingbeauty.upload.maximum_data_size=16384
+sleepingbeauty.upload.maximum_size=130048
+
+sleepingbeauty.bootloader.tool=arduino:avrdude
+sleepingbeauty.bootloader.extended_fuses=0xfd
+sleepingbeauty.bootloader.unlock_bits=0x3F
+sleepingbeauty.bootloader.lock_bits=0x0F
+
+sleepingbeauty.build.mcu=atmega1284p
+sleepingbeauty.build.f_cpu=16000000L
+sleepingbeauty.build.core=arduino:arduino
+sleepingbeauty.build.variant=sleepingbeauty
+sleepingbeauty.build.board=1284P_SLEEPINGBEAUTY
+
+# menu selections
+
+menu.a4a5jumper=SB A4A5 Jumpers
+
+sleepingbeauty.menu.a4a5jumper.analog=Analog/Digital Mode
+
+sleepingbeauty.menu.a4a5jumper.i2c=I2C/Digital Mode
+sleepingbeauty.menu.a4a5jumper.i2c.build.extra_flags=-D_SB_BOARD_A4A5_I2C
+
+
+menu.jtag=JTAG
+
+sleepingbeauty.menu.jtag.disabled=JTAG disabled
+sleepingbeauty.menu.jtag.disabled.bootloader.high_fuses=0xde
+
+sleepingbeauty.menu.jtag.enabled=JTAG enabled
+sleepingbeauty.menu.jtag.enabled.bootloader.high_fuses=0x9e
+
+menu.clock=Clock
+
+# 16Mhz Full Swing - more resistant to electrical interference than Low Power
+sleepingbeauty.menu.clock.full_swing=16Mhz Full Swing
+sleepingbeauty.menu.clock.full_swing.upload.speed=115200
+sleepingbeauty.menu.clock.full_swing.bootloader.low_fuses=0xf7
+sleepingbeauty.menu.clock.full_swing.bootloader.file=optiboot/optiboot_atmega1284p.hex
+sleepingbeauty.menu.clock.full_swing.build.f_cpu=16000000L
+
+# 16Mhz Full Swing @ 1Mbps
+sleepingbeauty.menu.clock.1M=16Mhz F.S. @ 1Mbps
+sleepingbeauty.menu.clock.1M.upload.speed=1000000
+sleepingbeauty.menu.clock.1M.bootloader.low_fuses=0xf7
+sleepingbeauty.menu.clock.1M.bootloader.file=optiboot/optiboot_mighty1284p_1M.hex
+sleepingbeauty.menu.clock.1M.build.f_cpu=16000000L
+
+# 16Mhz Low Power
+sleepingbeauty.menu.clock.low_power=16Mhz Low Power
+sleepingbeauty.menu.clock.low_power.upload.speed=115200
+sleepingbeauty.menu.clock.low_power.bootloader.low_fuses=0xff
+sleepingbeauty.menu.clock.low_power.bootloader.file=optiboot/optiboot_atmega1284p.hex
+sleepingbeauty.menu.clock.low_power.build.f_cpu=16000000L
+
+# 8Mhz Internal Oscillator
+sleepingbeauty.menu.clock.8Mhz=8Mhz Internal
+sleepingbeauty.menu.clock.8Mhz.upload.speed=500000
+sleepingbeauty.menu.clock.8Mhz.bootloader.low_fuses=0xe2
+sleepingbeauty.menu.clock.8Mhz.bootloader.file=optiboot/optiboot_1284p_8MHz_500k.hex
+sleepingbeauty.menu.clock.8Mhz.build.f_cpu=8000000L
+
+# 20Mhz Full Swing
+sleepingbeauty.menu.clock.20Mhz=20Mhz Full Swing
+sleepingbeauty.menu.clock.20Mhz.upload.speed=115200
+sleepingbeauty.menu.clock.20Mhz.bootloader.low_fuses=0xf7
+sleepingbeauty.menu.clock.20Mhz.bootloader.file=optiboot/optiboot_1284p_20MHz_noled.hex
+sleepingbeauty.menu.clock.20Mhz.build.f_cpu=20000000L
+
+##############################################################

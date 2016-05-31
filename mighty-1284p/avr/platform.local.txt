@@ -1,0 +1,2 @@
+#add a menu entry/divider for the mighty-1284p core boards
+name=Mighty-1284p Boards
