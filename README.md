@@ -56,7 +56,7 @@ Here you can have a look on **satshakit 128 board**:
 - [satshakit 128 holes](https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128_holes.png)
 - [satshakit 128 cut png](https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128_cut.png)
 - [satshakit 128 schematic](https://raw.githubusercontent.com/satshakit/satshakit-128/master/eagle/satshakit128/satshakit128.sch)
-- [satshakit 128 board](https://raw.githubusercontent.com/satshakit/satshakit-128/master/eagle/satshakit128/satshakit128.sch)
+- [satshakit 128 board](hhttps://github.com/satshakit/satshakit-128/raw/master/eagle/satshakit128/satshakit128.brd)
 - [satshakit 128 BOM Open Document](https://github.com/satshakit/satshakit-128/raw/master/docs/satshakit_128.ods)
 - [satshakit 128 BOM Excel](https://github.com/satshakit/satshakit-128/raw/master/docs/satshakit_128.xlsx)
 
@@ -88,9 +88,7 @@ To do so follow these steps:
 
 1. **download** satshakit 128 repository
 2. close **Arduino IDE** before doing anything
-3. copy the folder named **mighty-1284p** inside the **Arduino IDE hardware folder**
-..* **arduino-1.6.x/hardware/** in Linux
-..* **Documents/Arduino/hardware** in MacOS 
+3. copy the folder named **mighty-1284p** inside the **Arduino IDE hardware folder**, **arduino-1.6.x/hardware/** in Linux, **Documents/Arduino/hardware** in MacOS 
 4. open again the Arduino IDE
 5. select **avr-developers.com pinouts 16MHz using Optiboot** board
 
@@ -113,9 +111,9 @@ Here is the Arduino pinout of the satshakit 128:
 
 What's in the repo
 --
-- **[docs](https://github.com/satshakit/satshakit-micro/tree/master/docs)**: BOM files for Farnell
-- **[egle projects](https://github.com/satshakit/satshakit-micro/tree/master/eagle_projects/satshakit_micro)**: eagle projects of satshakit
-- **[media](https://github.com/satshakit/satshakit-micro/tree/master/media)**: svg of satshakits, connections schemas, images for cnc milling machine and fiber laser cutter, other images
+- **[docs](https://github.com/satshakit/satshakit-128/tree/master/docs)**: BOM files for Farnell
+- **[egle projects](https://github.com/satshakit/satshakit-128/tree/master/eagle/satshakit128)**: eagle projects of satshakit
+- **[media](https://github.com/satshakit/satshakit-128/tree/master/media)**: svg of satshakits, connections schemas, images for cnc milling machine and fiber laser cutter, other images
 
 Authors
 --
