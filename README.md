@@ -53,7 +53,7 @@ Here you can have a look on **satshakit 128 board**:
 
 - [satshakit 128 svg](https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128.svg)
 - [satshakit 128 internal png](https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128_internal.png)
-- [satshakit 128 holes png]https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128_holes.png)
+- [satshakit 128 holes](https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128_holes.png)
 - [satshakit 128 cut png](https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128_cut.png)
 - [satshakit 128 schematic](https://raw.githubusercontent.com/satshakit/satshakit-128/master/eagle/satshakit128/satshakit128.sch)
 - [satshakit 128 board](https://raw.githubusercontent.com/satshakit/satshakit-128/master/eagle/satshakit128/satshakit128.sch)
