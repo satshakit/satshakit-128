@@ -86,13 +86,13 @@ To add the support for satshakit 128 you can use the **[Mighty 1284P](https://gi
 
 To do so follow these steps:
 
-- download satshakit 128 repository
-- close your Arduino IDE
-- copy the folder named mighty-1284p inside the **Arduino IDE hardware folder**
--- **arduino-1.6.x/hardware/** in Linux
--- **Documents/Arduino/hardware** in MacOS 
-- open again the Arduino IDE
-- select **avr-developers.com pinouts 16MHz using Optiboot** board
+1. **download** satshakit 128 repository
+2. close **Arduino IDE** before doing anything
+3. copy the folder named **mighty-1284p** inside the **Arduino IDE hardware folder**
+..* **arduino-1.6.x/hardware/** in Linux
+..* **Documents/Arduino/hardware** in MacOS 
+4. open again the Arduino IDE
+5. select **avr-developers.com pinouts 16MHz using Optiboot** board
 
 Now you can use an Arduino as ISP to burn the bootloader and any Arduino sketch you want. To upload a program you connect **Arduino to the satshakit 128** as follows:
 
@@ -109,7 +109,7 @@ To program a satshakit 128, you have always to use a programmer, and use the **S
 
 Here is the Arduino pinout of the satshakit 128:
 
-<img src="media/satshakit128_programming.png" width="60%">
+<img src="media/satshakit128_pinout.png" width="60%">
 
 What's in the repo
 --
@@ -124,9 +124,9 @@ Authors
 
 Contact
 --
+
 - **ingrassiada@gmail.com**
 - **[linkedin](http://it.linkedin.com/in/danieleingrassia)**
-
 
 Thanks
 --
