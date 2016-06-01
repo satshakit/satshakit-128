@@ -41,7 +41,7 @@ In comparison with the other satshakits based on ATMega328P satshakit 128 has:
 - **16k of ram** instead of 2k
 - **32 IO** pins instead of 23
 
-Finally satshakit 128 is even smaller than satshakit cnc.
+Finally satshakit 128 is smaller than satshakit cnc and it costs **13 euro** each (much less for more).
 
 Here you can have a look on **satshakit 128 board**:
 
@@ -52,13 +52,13 @@ Here you can have a look on **satshakit 128 board**:
 **downloads (right click, download as)**
 
 - [satshakit 128 svg](https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128.svg)
-- [satshakit 128 internal png](https://raw.githubusercontent.com/satshakit/satshakit-micro/master/media/satshakit_micro_internal.png)
-- [satshakit 128 holes png](https://github.com/satshakit/satshakit-micro/blob/master/media/satshakit_micro_holes.png)
-- [satshakit 128 cut png](https://github.com/satshakit/satshakit-micro/blob/master/media/satshakit_micro_cut.png)
-- [satshakit 128 schematic](https://raw.githubusercontent.com/satshakit/satshakit-micro/master/eagle_projects/satshakit_micro/satshakit_micro.sch)
-- [satshakit 128 board](https://raw.githubusercontent.com/satshakit/satshakit-micro/master/eagle_projects/satshakit_micro/satshakit_micro.brd)
-- [satshakit 128 BOM Open Document](https://github.com/satshakit/satshakit-micro/raw/master/docs/satshakit_micro_BOM.ods)
-- [satshakit 128 BOM Excel](https://github.com/satshakit/satshakit-micro/raw/master/docs/satshakit_micro_BOM.xlsx)
+- [satshakit 128 internal png](https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128_internal.png)
+- [satshakit 128 holes png]https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128_holes.png)
+- [satshakit 128 cut png](https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128_cut.png)
+- [satshakit 128 schematic](https://raw.githubusercontent.com/satshakit/satshakit-128/master/eagle/satshakit128/satshakit128.sch)
+- [satshakit 128 board](https://raw.githubusercontent.com/satshakit/satshakit-128/master/eagle/satshakit128/satshakit128.sch)
+- [satshakit 128 BOM Open Document](https://github.com/satshakit/satshakit-128/raw/master/docs/satshakit_128.ods)
+- [satshakit 128 BOM Excel](https://github.com/satshakit/satshakit-128/raw/master/docs/satshakit_128.xlsx)
 
 **media**
 
