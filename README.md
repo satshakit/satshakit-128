@@ -32,7 +32,8 @@ Here you can find all of the satshakit boards: **[satshakit organization](https:
 satshakit 128
 --
 
-**satshakit 128** is satshakit built around the **ATMEga1284P** chip and it is suitable for complex scenarios in which is needed have more flash and ram memory, but also the possibility to use 2 serial simultaneously.
+**satshakit 128** is microcontroller board designed around the **ATMega1284P** chip and it is suitable for complex scenarios in which is needed to have more flash and ram memory, but also the possibility to use 2 serial simultaneously.
+
 In comparison with the other satshakits based on ATMega328P satshakit 128 has:
 
 - **128k** flash memory instead of 32k
@@ -40,15 +41,17 @@ In comparison with the other satshakits based on ATMega328P satshakit 128 has:
 - **16k of ram** instead of 2k
 - **32 IO** pins instead of 23
 
-Here is the **satshakit 128 board**:
+Finally satshakit 128 is even smaller than satshakit cnc.
+
+Here you can have a look on **satshakit 128 board**:
 
 <img src="media/satshakit128_board.jpg" width="70%">
 
-<img src="/media/satshakit128.svg" width="70%">
+<img src="/media/satshakit128_pinout.png" width="70%">
 
 **downloads (right click, download as)**
 
-- [satshakit 128 svg](https://raw.githubusercontent.com/satshakit/satshakit-micro/master/media/satshakit_micro.svg)
+- [satshakit 128 svg](https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128.svg)
 - [satshakit 128 internal png](https://raw.githubusercontent.com/satshakit/satshakit-micro/master/media/satshakit_micro_internal.png)
 - [satshakit 128 holes png](https://github.com/satshakit/satshakit-micro/blob/master/media/satshakit_micro_holes.png)
 - [satshakit 128 cut png](https://github.com/satshakit/satshakit-micro/blob/master/media/satshakit_micro_cut.png)
@@ -77,30 +80,36 @@ alt="http://img.youtube.com/vi/X3d5tKupVwU/0.jpg" width="240" height="180" borde
 
 Getting Started
 --
-A satshakit board is **totally like an Arduino board**, thus is possible to use the Arduino IDE. When you finish solder satshakit, you're ready to program it. If you want to use satshakit as an Arduino, you first need to **upload Arduino bootloader**. This will also set the ATmega1284P fuses as the same of an Arduino UNO. 
+A satshakit board is **very similar to an Arduino board**, thus is possible to use the Arduino IDE and its libraries. When you finish solder satshakit 128, you have to program it. If you want to use satshakit as an Arduino, you first need to **upload Arduino bootloader**. This will also set the ATmega1284P fuses. Before doing any programming you need to **patch your arduino IDE** using a specific set of files that will add the satshakit 128 as an available board to use. 
 
-To use this board you have to place the folder 
+To add the support for satshakit 128 you can use the **[Mighty 1284P](https://github.com/JChristensen/mighty-1284p/tree/v1.6.3)**, that is provided in this repo inside the **[mighty-1284p folder](https://github.com/satshakit/satshakit-128/tree/master/mighty-1284p)**. 
 
-To do this you need to use a **programmer**, for example another Arduino or FabISP. If you plan to program a satshakit with an Arduino, be sure to upload the **Arduino as ISP skecth** before connecting the satshakit to it.
+To do so follow these steps:
 
-Here are the connection schemas for programming **satshakit micro**:
+- download satshakit 128 repository
+- close your Arduino IDE
+- copy the folder named mighty-1284p inside the **Arduino IDE hardware folder**
+-- **arduino-1.6.x/hardware/** in Linux
+-- **Documents/Arduino/hardware** in MacOS 
+- open again the Arduino IDE
+- select **avr-developers.com pinouts 16MHz using Optiboot** board
 
-<img src="media/satshakit_micro_arduino_programming.png" width="60%">
+Now you can use an Arduino as ISP to burn the bootloader and any Arduino sketch you want. To upload a program you connect **Arduino to the satshakit 128** as follows:
 
-<img src="media/satshakit_micro_fabisp_programming.png" width="60%">
+<img src="media/satshakit128_programming.png" width="60%">
 
 Once everything is connected, follow these steps to upload Arduino bootloader:
 
 1. open Arduino IDE 
-2. select proper programmer (for example Arduino as ISP or USBtinyISP) 
-3. select Arduino UNO as board
+2. select proper programmer Arduino as ISP
+3. select **avr-developers.com pinouts 16MHz using Optiboot** board
 4. click on tools->Burn Bootloader
 
-To program a satshakit micro, you have always to use a programmer, and use the **Sketch >Upload using a programmer** function of the Arduino IDE.
+To program a satshakit 128, you have always to use a programmer, and use the **Sketch >Upload using a programmer** function of the Arduino IDE.
 
-And here is the Arduino pinout of the satshakit micro:
+Here is the Arduino pinout of the satshakit 128:
 
-<img src="media/satshakit_micro_arduino_pin_mapping.png" width="60%">
+<img src="media/satshakit128_programming.png" width="60%">
 
 What's in the repo
 --
@@ -126,6 +135,8 @@ Thanks
 Hochschule Rhein-Waal<br />
 Friedrich-Heinrich-Allee 25, 47475 Kamp-Lintfort, Germany<br />
 fablab@hochschule-rhein-waal.de
+
+[Mighty 1284P](https://github.com/JChristensen/mighty-1284p/tree/v1.6.3)
 
 
 License
