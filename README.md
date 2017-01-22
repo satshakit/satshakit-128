@@ -53,7 +53,6 @@ Here you can have a look on **satshakit 128 board**:
 
 - [satshakit 128 svg](https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128.svg)
 - [satshakit 128 internal png](https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128_internal.png)
-- [satshakit 128 holes](https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128_holes.png)
 - [satshakit 128 cut png](https://raw.githubusercontent.com/satshakit/satshakit-128/master/media/satshakit128_cut.png)
 - [satshakit 128 schematic](https://raw.githubusercontent.com/satshakit/satshakit-128/master/eagle/satshakit128/satshakit128.sch)
 - [satshakit 128 board](https://github.com/satshakit/satshakit-128/raw/master/eagle/satshakit128/satshakit128.brd)
@@ -61,8 +60,6 @@ Here you can have a look on **satshakit 128 board**:
 - [satshakit 128 BOM Excel](https://github.com/satshakit/satshakit-128/raw/master/docs/satshakit_128.xlsx)
 
 **media**
-
-<img src="media/satshakit128_board_solder.jpg" width="70%">
 
 <img src="media/satshakit128_board_soldered.jpg" width="70%">
 
@@ -94,7 +91,7 @@ To do so follow these steps:
 
 Now you can use an Arduino as ISP to burn the bootloader and any Arduino sketch you want. To upload a program you connect **Arduino to the satshakit 128** as follows:
 
-<img src="media/satshakit128_programming.png" width="60%">
+<img src="media/satshakit128_programming_arduino.png" width="60%">
 
 Once everything is connected, follow these steps to upload Arduino bootloader:
 
@@ -103,7 +100,12 @@ Once everything is connected, follow these steps to upload Arduino bootloader:
 3. select **avr-developers.com pinouts 16MHz using Optiboot** board
 4. click on tools->Burn Bootloader
 
-To program a satshakit 128, you have always to use a programmer, and use the **Sketch >Upload using a programmer** function of the Arduino IDE.
+After you burnt the bootloader you can also use an **FTDI usb cable** to program the satshakit 128. Here is the connection schema to program the satshakit 128 using an FTDI cable:
+
+<img src="media/satshakit128_programming_fdti.png" width="60%">
+
+
+Remember that if you try to program the satshakit 128 using an Arduino, then you will also delete the bootloader, losing the capability to be programmed using the FTDI cable. To hae back this possibility burn again the bootloader.
 
 Here is the Arduino pinout of the satshakit 128:
 
