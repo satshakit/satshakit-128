@@ -9,24 +9,6 @@ What is satshakit?
 
 satshakit is a **Arduino IDE  and libraries compatible**, fabbable and open source board, and also an improved version of [Fabkit](http://fabacademy.org/archives/2015/doc/projects/fabkit-0.4.html). 
 
-satshakit boards
---
-
-There are different kinds of **satshakit boards** depending on the **fabrication technique** you will use to make them, or on the **size** of the board. 
-
-<img src="media/satshakit_versions.jpg" width="70%">
-
-Here is a comparison table about different satshakit boards:
-
-|name|mcu|pins|size(mm)|
-| :---: | :---:|:---:|:---:|
-|`satshakit laser`|ATmega328P|Arduino + ADC6/7|48 x 42|
-|`satshakit cnc`|ATmega328P| Arduino + ADC6/7  |54 x 45|
-|`satshakit multicore`|2 x ATmega328P| 2 x Arduino + ADC6/7|50 x 42|
-|`satshakit micro`| ATmega328P|Arduino|40 x 24|
-|`satshakit flight controller`| ATmega328P|MultiWii|48 x 48|
-|`satshakit 128`| ATmega1284P|1284P|48 x 36|
-
 Here you can find all of the satshakit boards: **[satshakit organization](https://github.com/satshakit)**.
 
 satshakit 128
