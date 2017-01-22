@@ -102,7 +102,7 @@ Once everything is connected, follow these steps to upload Arduino bootloader:
 
 After you burnt the bootloader you can also use an **FTDI usb cable** to program the satshakit 128. Here is the connection schema to program the satshakit 128 using an FTDI cable:
 
-<img src="media/satshakit128_programming_fdti.png" width="60%">
+<img src="media/satshakit128_programming_ftdi.png" width="60%">
 
 
 Remember that if you try to program the satshakit 128 using an Arduino, then you will also delete the bootloader, losing the capability to be programmed using the FTDI cable. To hae back this possibility burn again the bootloader.
